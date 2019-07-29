@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+       
+        let resul = [
+        {nome:'joão', nota:[2,6,3,4]},
+        {nome:'Marcos', nota:[2,8,7,4]},
+        {nome:'Maria', nota:[2,10,3,5]}
+
+        ];
+    
+        let mediaTotal = 0;
+
+        let msg = '';
+
+        for (let i = 0; i < resul.length; i++) {
+        msg += '<p><b>' + resul[i].nome + '</br></p>';
+        let notas = resul[i].nota;
+        msg += '<p>notas: '+notas.join(' | ')+'</p>'
+            let totalnotas = 0;
+            for (let j = 0; j < notas.length; j++) {
+                totalnotas = notas[j];        
+            }
+            let media = totalnotas / notas.length;
+            msg+= '<p>A média é: '+media+'</p><hr>'
+            mediaTotal += media;
+        }
+      
+            msg += '<p>A média dos alunos é '+(mediaTotal / resul.length)+'</p>'
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+</body>
+</html>
