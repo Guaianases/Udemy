@@ -38,28 +38,28 @@
             3- Corromper jovens com suas ideias;
         </p> 
    </p>
-        <script>
-               (function () {
-                   window.addEventListener('load', init )
+    <script>
+            (function () {
+                window.addEventListener('load', init )
 
-                function init() {
-                    let $paragrafo = document.querySelectorAll('p');
+            function init() {
+                let $paragrafo = document.querySelectorAll('p');
 
-                    let x = 0;
-                    while ($paragrafo[x]) {
-                       $paragrafo[x].innerHTML = formatarText($paragrafo[x].innerHTML);
-                        x++;
-                    }
-                    function formatarText(txt) {
-                        if(txt.length <= 200)
-                        return txt;
-
-                        let subText = txt.slice(0, 200);
-
-                        return subText + '...';
-                    }
+                let x = 0;
+                while ($paragrafo[x]) {
+                    $paragrafo[x].innerHTML = formatarText($paragrafo[x].innerHTML);
+                    x++;
                 }
-            })()
+                function formatarText(txt) {
+                    if(txt.length <= 200)
+                    return txt;
+
+                    let subText = txt.slice(0, 200);
+
+                    return subText + '...';
+                }
+            }
+        })()
 
 
 
