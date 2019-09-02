@@ -11,7 +11,10 @@
             padding: 30px;
 
         }
-
+        .men {
+            font-size: 5%;
+            
+        }
     </style>
 </head>
 <body>
@@ -65,13 +68,23 @@
 
             function init() {
                 let $paragrafo = document.querySelectorAll('p');
-
+              
               for (let x = 0; x < $paragrafo.length; x++) {
-                let temJS = $paragrafo[x].textContent.toLowerCase().indexOf('javascript') >= 0;
-                
-                  $paragrafo[x].className = temJS ? 'destaque' : '';
+                let temJS = $paragrafo[x].textContent.indexOf('JAVASCRIPT') >= 0;
+
+                     $paragrafo[x].className = temJS ? 'destaque' : '';
+
+                     if (temJS) {
+
+                        let java = $paragrafo[x].textContent.replace("JAVASCRIPT" , 'PHP');
+                        $paragrafo[x].textContent = java;
+                        
+                       java[x].className = java ? 'men' : '';
+
+                        console.log(java);
+                     }
+                 }
               }
-               }
         })()
 
     </script>
