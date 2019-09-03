@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <title>BOM - PARTE - 03  Eventos</title>
+</head>
+<body>
+    <p>Em geografia, horizontal é uma linha reta imaginária cuja direção é paralela ao horizonte terrestre. 
+         Ela é perpendicular à vertical a partir do ponto de ponto de observação. Em geometria e na matemática em geral, 
+         a horizontal é usada juntamente com a vertical para a elaboração de gráficos, tabelas etc</p>
+    <p>Em geografia, horizontal é uma linha reta imaginária cuja direção é paralela ao horizonte terrestre. 
+         Ela é perpendicular à vertical a partir do ponto de ponto de observação. Em geometria e na matemática em geral, 
+         a horizontal é usada juntamente com a vertical para a elaboração de gráficos, tabelas etc</p>
+     <p>Em geografia, horizontal é uma linha reta imaginária cuja direção é paralela ao horizonte terrestre. 
+         Ela é perpendicular à vertical a partir do ponto de ponto de observação. Em geometria e na matemática em geral, 
+         a horizontal é usada juntamente com a vertical para a elaboração de gráficos, tabelas etc</p>
+
+    <script>
+
+        window.addEventListener('load', function(){ // Esse evento funciona quando a página é carrgada.
+            console.log('load disparado');
+         });
+        //2 error // Esse evento é utilizado mais em um ifreme
+
+         window.addEventListener('resize', function(e){
+            console.log('resize dispara');
+            console.log(e);
+         });
+
+         window.addEventListener('scroll', function(e){
+            console.log('scroll dispara');
+            console.log(e);
+            console.log("Scroll Y", pageYOffset);
+            
+         });
+
+    </script>
+    <script>
+        
+    </script>
+</body>
+</html>
