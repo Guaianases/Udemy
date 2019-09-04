@@ -119,12 +119,21 @@
 
                 function destacaMenu() {
                     let position = [];
-                    for(var i = 0;i < $links.length; i++){
-                        
-
+                    for(var i = 0; i < $links.length; i++){
+                        position[i] = getPosicao($links[i]);
                     }
+                    console.log(position);
+                    
                 }
+                
+                function getPosicao(link) {
+                    let alvo = document.querySelector(link.getAttribute('href'));
+                    let positionYViewport = alvo.getBoundingClientRect().top;
+                    return positionYViewport;
 
+                }
+                
+                
             })()
         
         
