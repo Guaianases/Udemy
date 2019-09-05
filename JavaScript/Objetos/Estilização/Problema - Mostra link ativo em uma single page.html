@@ -49,7 +49,11 @@
        
              
        
-        
+        <h1>
+             Em uma página long scrolling de navegação interna, 
+             identificar (destacar) no menu principal (fixo no da página)
+             a seção atual enquanto o usuário scrolla a página.
+        </h1>
         
         
         <nav class="nav">
@@ -95,8 +99,7 @@
             
             <h2 id="s3">secao 3</h2>
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint fuga, deleniti repellat iure cum autem excepturi saepe totam quam, nam expedita aspernatur tenetur tempora, cupiditate. Sapiente cumque saepe maiores a.</p>
-            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint fuga, deleniti repellat iure cum autem excepturi saepe totam quam, nam expedita aspernatur tenetur tempora, cupiditate. Sapiente cumque saepe maiores a.</p>      
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore autem aspernatur fugiat necessitatibus deleniti ea earum expedita exercitationem soluta unde suscipit saepe deserunt, illo est perferendis, at natus. Ducimus, voluptate!</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore autem aspernatur fugiat necessitatibus deleniti ea earum expedita exercitationem soluta unde suscipit saepe deserunt, illo est perferendis, at natus. Ducimus, voluptate!</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore autem aspernatur fugiat necessitatibus deleniti ea earum expedita exercitationem soluta unde suscipit saepe deserunt, illo est perferendis, at natus. Ducimus, voluptate!</p>
@@ -122,18 +125,35 @@
                     for(var i = 0; i < $links.length; i++){
                         position[i] = getPosicao($links[i]);
                     }
-                    console.log(position);
+                 //   console.log(position);
+
+                    let linkAtual = pegaUltimoLink(position);
                     
+                    let linkActive = $menu.querySelector('.actived');
+                    if(!!linkActive) linkActive.classList.remove('actived');
+                    linkAtual.classList.add('actived');
                 }
                 
                 function getPosicao(link) {
                     let alvo = document.querySelector(link.getAttribute('href'));
                     let positionYViewport = alvo.getBoundingClientRect().top;
                     return positionYViewport;
-
+                    
                 }
-                
-                
+
+                function pegaUltimoLink(position) {
+                    let qtd = position.length;
+      
+                    
+                    while (qtd) {
+                         qtd--;
+                        if (position[qtd] < innerHeight / 2) {
+                            return $links[qtd];
+                        }
+                    }
+                    return $links[0];
+                }
+                destacaMenu();
             })()
         
         
