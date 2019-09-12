@@ -18,10 +18,10 @@
         let $teste = document.querySelector('.menu');
            console.log("BG: ", $teste.style.background);
 
-            console.log ('Computado ', getComputedStyle().background);
+          //  console.log ('Computado ', getComputedStyle().background);
         
             let $paragrafo = document.querySelector('p');
-          //  console.log(getComputedStyle($paragrafo)); 
+          console.log(getComputedStyle($paragrafo)); 
 
             console.log($paragrafo.offsetHeight, $paragrafo.offsetWidth); // Eles apresentão os valores que browser utilizou para posicionar o elemento na tela.
             console.log($paragrafo.offsetLeft, $paragrafo.offsetTop);
